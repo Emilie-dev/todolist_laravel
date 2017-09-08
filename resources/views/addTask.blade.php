@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +14,10 @@
     		</div>
   		</div>
 </nav>
+
 	<form class action='/addTask' method="post">
 		{{csrf_field()}}
-		
+
 		<div class="from-group">
 			<label for="addQuantity">Quantity :</label>
 			<input id="addQuantity" type="number" name="addQuantity" />
@@ -26,6 +26,7 @@
 			<button class="btn btn-success" type="submit">Add</button>
 		</div>
 	</form>
+
 	<div class="col-lg-s12">
         <table class="table">
             <thead>
@@ -37,6 +38,7 @@
                 </tr>
             </thead>
           	<tbody>
+
           		@foreach ($tasks as $task)
           			<tr>
           				<td>{{ $task->quantity }}</td>
