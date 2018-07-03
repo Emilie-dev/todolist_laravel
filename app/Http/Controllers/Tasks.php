@@ -46,4 +46,26 @@ class Tasks extends Controller
     	return redirect('/addTask');
 
     }
+
+    public function updateTask ( Request $request, $id) {
+
+    	$task = Task::find($id);
+    	$task->quantity = $request->quantity;
+    	$task->desciption = $request->desciption;
+    	$task->created_at = $request->created_at;
+    	$task->updated_at = $request->updated_at;
+    	$task->save();
+    	return view('/addTask');
+    }
+
+    public function deleteTask ( Request $request, $id) {
+
+      $task = Task::find($id);
+      $task->quantity = $request->quantity;
+      $task->desciption = $request->desciption;
+      $task->created_at = $request->created_at;
+      $task->updated_at = $request->updated_at;
+      $task->delete();
+      return redirect('/addTask');
+    }
 }

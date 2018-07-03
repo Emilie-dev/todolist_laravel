@@ -13,14 +13,22 @@
 
 
 
-// Route for display all tasks
+// Display all tasks
 /*
 Route::get('/addTask', function(){
 	return view('addTask');
 });
 */
+
+// Display all tasks
 Route::get('/addTask', 'Tasks@getAllTasks');
 
 
-// Route for add a task
+// Add a task
 Route::post('/addTask', 'Tasks@addTasks');
+
+// Delete a task
+Route::delete('/deleteTask/{id}', 'Tasks@deleteTask');
+
+// Edit a task
+Route::post('/updateTask', 'Tasks@updateTask');
